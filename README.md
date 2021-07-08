@@ -12,3 +12,7 @@ For `vim-plug`:
 ```viml
 Plug 'aldur/vim-algorand-teal'
 ```
+
+## Screenshots
+
+<img alt="Screenshot" src="https://user-images.githubusercontent.com/1721633/124937379-a0acbc80-e007-11eb-94f1-5b5b975c20c5.png">
