@@ -37,6 +37,10 @@ syntax keyword tealKeyword
             \ global
             \ load
             \ store
+            \ gload
+            \ gloads
+            \ gaid
+            \ gaids
 
 syntax keyword tealControl
             \ err
@@ -48,6 +52,7 @@ syntax keyword tealControl
             \ swap
             \ select
             \ assert
+            \ retsub
 
 syntax keyword tealUnit
             \ balance
@@ -81,6 +86,15 @@ syntax keyword tealFunction
             \ concat
             \ substring
             \ substring3
+            \ shl
+            \ shr
+            \ divmodw
+            \ exp
+            \ expw
+            \ sqrt
+            \ log2
+            \ bzero
+            \ bitlen
 
 syntax keyword tealTxnField
             \ Sender
@@ -139,6 +153,7 @@ syntax keyword tealTxnField
             \ GlobalNumByteSlice
             \ LocalNumUint
             \ LocalNumByteSlice
+            \ ExtraProgramPages
 
 syntax keyword tealTxnType
             \ unknown
@@ -193,6 +208,10 @@ syntax match tealBranchTarget "\v^[a-zA-Z_][a-zA-Z0-9_]*:$"
 syntax match tealBranchLabel "\v[a-zA-Z_][a-zA-Z0-9_]*$"
 syntax keyword tealBranch bnz bz b nextgroup=tealBranchTarget skipwhite
 
+syntax match tealSubroutineTarget "\v^[a-zA-Z_][a-zA-Z0-9_]*:$"
+syntax match tealSubroutineLabel "\v[a-zA-Z_][a-zA-Z0-9_]*:$"
+syntax keyword tealSubroutine callsub nextgroup=tealSubroutineTarget skipwhite
+
 " Ordering is important here, see :h syn-priority
 syntax match tealOperator "\v\=\="
 syntax match tealOperator "\v\!\="
@@ -212,6 +231,21 @@ syntax match tealOperator "\v\!"
 syntax match tealOperator "\v\%"
 syntax match tealOperator "\v\^"
 syntax match tealOperator "\v\~"
+syntax match tealOperator "\vb\+"
+syntax match tealOperator "\vb\-"
+syntax match tealOperator "\vb\*"
+syntax match tealOperator "\vb\/"
+syntax match tealOperator "\vb\%"
+syntax match tealOperator "\vb\<"
+syntax match tealOperator "\vb\>"
+syntax match tealOperator "\vb\<\="
+syntax match tealOperator "\vb\>\="
+syntax match tealOperator "\vb\=\="
+syntax match tealOperator "\vb\!\="
+syntax match tealOperator "\vb\\"
+syntax match tealOperator "\vb\&"
+syntax match tealOperator "\vb\^"
+syntax match tealOperator "\vb\~"
 
 syntax region tealString start=/\v"/ skip=/\v\\./ end=/\v"/
 
@@ -236,7 +270,11 @@ highlight def link tealOnCompletionType Identifier
 highlight def link tealBranchTarget Label
 highlight def link tealBranchLabel Label
 
+highlight def link tealSubroutineTarget Label
+highlight def link tealSubroutineLabel Label
+
 highlight def link tealControl Exception
 highlight def link tealBranch Exception
+highlight def link tealSubroutine Exception
 
 highlight def link tealString String
