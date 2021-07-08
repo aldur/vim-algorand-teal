@@ -204,12 +204,12 @@ syntax keyword tealOnCompletionType
 syntax match tealComment "\v//.*$"
 syntax match tealPragma "\v^#pragma.*$"
 
-syntax match tealBranchTarget "\v^[a-zA-Z_][a-zA-Z0-9_]*:$"
-syntax match tealBranchLabel "\v[a-zA-Z_][a-zA-Z0-9_]*$"
+syntax match tealBranchTarget "\v[a-zA-Z_][a-zA-Z0-9_]*$" contained
+syntax match tealBranchLabel "\v^[a-zA-Z_][a-zA-Z0-9_]*:$"
 syntax keyword tealBranch bnz bz b nextgroup=tealBranchTarget skipwhite
 
-syntax match tealSubroutineTarget "\v^[a-zA-Z_][a-zA-Z0-9_]*:$"
-syntax match tealSubroutineLabel "\v[a-zA-Z_][a-zA-Z0-9_]*:$"
+syntax match tealSubroutineTarget "\v[a-zA-Z_][a-zA-Z0-9_]*$" contained
+syntax match tealSubroutineLabel "\v^[a-zA-Z_][a-zA-Z0-9_]*:$"
 syntax keyword tealSubroutine callsub nextgroup=tealSubroutineTarget skipwhite
 
 " Ordering is important here, see :h syn-priority
