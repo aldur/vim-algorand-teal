@@ -1,9 +1,9 @@
-" TEAL v3 syntax file
+" TEAL v4 syntax file
 
 if exists('b:current_syntax')
     finish
 endif
-let b:current_syntax = 'teal'
+let b:current_syntax = 'algorand-teal'
 
 syntax keyword tealKeyword
             \ int
