@@ -1,4 +1,12 @@
-" TEAL v4 syntax file
+" TEAL v5 syntax file
+" To find new opcodes, look at
+" https://github.com/algorand/go-algorand/blob/master/data/transactions/logic/TEAL_opcodes.md
+"
+" Also:
+" $ cd go-algorand
+" $ make
+" $ cat langspec.json | jq '.Ops[].Name' | sort -u > /tmp/new.opcodes
+" $ # diff with old langspec.json
 
 if exists('b:current_syntax')
     finish
@@ -9,6 +17,8 @@ syntax keyword tealKeyword
             \ int
             \ byte
             \ addr
+            \ cover
+            \ uncover
             \ intcblock
             \ intc
             \ intc_0
@@ -24,6 +34,7 @@ syntax keyword tealKeyword
             \ bytec_3
             \ pushbytes
             \ arg
+            \ args
             \ arg_0
             \ arg_1
             \ arg_2
@@ -31,16 +42,30 @@ syntax keyword tealKeyword
             \ txn
             \ gtxn
             \ txna
+            \ txnas
             \ gtxna
+            \ gtxnas
             \ gtxns
             \ gtxnsa
+            \ gtxnsas
             \ global
             \ load
+            \ loads
             \ store
+            \ stores
             \ gload
             \ gloads
             \ gaid
             \ gaids
+            \ extract
+            \ extract3
+            \ extract_uint16
+            \ extract_uint32
+            \ extract_uint64
+            \ itxn
+            \ itxna
+            \ itxn_begin
+            \ itxn_submit
 
 syntax keyword tealControl
             \ err
@@ -53,6 +78,7 @@ syntax keyword tealControl
             \ select
             \ assert
             \ retsub
+            \ log
 
 syntax keyword tealUnit
             \ balance
@@ -68,12 +94,17 @@ syntax keyword tealUnit
             \ app_global_del
             \ asset_holding_get
             \ asset_params_get
+            \ app_params_get
+            \ itxn_field
 
 syntax keyword tealFunction
             \ sha256
             \ keccak256
             \ sha512_256
             \ ed25519verify
+            \ ecdsa_pk_decompress
+            \ ecdsa_pk_recover
+            \ ecdsa_verify
             \ len
             \ itob
             \ btoi
@@ -175,6 +206,8 @@ syntax keyword tealGlobalFields
             \ LatestTimestamp
             \ CurrentApplicationID
             \ CreatorAddress
+            \ CurrentApplicationAddress
+            \ GroupID
 
 syntax keyword tealAssetHoldingFields
             \ AssetBalance
@@ -200,6 +233,17 @@ syntax keyword tealOnCompletionType
             \ ClearState
             \ UpdateApplication
             \ DeleteApplication
+
+syntax keyword tealAppParamsFields
+            \ AppApprovalProgram
+            \ AppClearStateProgram
+            \ AppGlobalNumUint
+            \ AppGlobalNumByteSlice
+            \ AppLocalNumUint
+            \ AppLocalNumByteSlice
+            \ AppExtraProgramPages
+            \ AppCreator
+            \ AppAddress
 
 syntax match tealComment "\v//.*$"
 syntax match tealPragma "\v^#pragma.*$"
@@ -265,6 +309,7 @@ highlight def link tealTxnType Identifier
 highlight def link tealGlobalFields Identifier
 highlight def link tealAssetHoldingFields Identifier
 highlight def link tealAssetParamsFields Identifier
+highlight def link tealAppParamsFields Identifier
 highlight def link tealOnCompletionType Identifier
 
 highlight def link tealBranchTarget Label
