@@ -48,6 +48,8 @@ syntax keyword tealKeyword
             \ gtxns
             \ gtxnsa
             \ gtxnsas
+            \ gitxn
+            \ gitxna
             \ global
             \ load
             \ loads
@@ -55,6 +57,7 @@ syntax keyword tealKeyword
             \ stores
             \ gload
             \ gloads
+            \ gloadss
             \ gaid
             \ gaids
             \ extract
@@ -62,10 +65,12 @@ syntax keyword tealKeyword
             \ extract_uint16
             \ extract_uint32
             \ extract_uint64
+            \ base64_decode
             \ itxn
             \ itxna
             \ itxn_begin
             \ itxn_submit
+            \ itxn_next
 
 syntax keyword tealControl
             \ err
@@ -95,6 +100,7 @@ syntax keyword tealUnit
             \ asset_holding_get
             \ asset_params_get
             \ app_params_get
+            \ acct_params_get
             \ itxn_field
 
 syntax keyword tealFunction
@@ -123,6 +129,7 @@ syntax keyword tealFunction
             \ exp
             \ expw
             \ sqrt
+            \ bsqrt
             \ log2
             \ bzero
             \ bitlen
@@ -208,6 +215,9 @@ syntax keyword tealGlobalFields
             \ CreatorAddress
             \ CurrentApplicationAddress
             \ GroupID
+            \ OpcodeBudget
+            \ CallerApplicationID
+            \ CallerApplicationAddress
 
 syntax keyword tealAssetHoldingFields
             \ AssetBalance
@@ -244,6 +254,11 @@ syntax keyword tealAppParamsFields
             \ AppExtraProgramPages
             \ AppCreator
             \ AppAddress
+
+syntax keyword tealAcctParamsFields
+            \ AcctBalance
+            \ AcctMinBalance
+            \ AcctAuthAddr
 
 syntax match tealComment "\v//.*$"
 syntax match tealPragma "\v^#pragma.*$"
@@ -310,6 +325,7 @@ highlight def link tealGlobalFields Identifier
 highlight def link tealAssetHoldingFields Identifier
 highlight def link tealAssetParamsFields Identifier
 highlight def link tealAppParamsFields Identifier
+highlight def link tealAcctParamsFields Identifier
 highlight def link tealOnCompletionType Identifier
 
 highlight def link tealBranchTarget Label
