@@ -71,6 +71,7 @@ syntax keyword tealKeyword
             \ itxn_begin
             \ itxn_submit
             \ itxn_next
+            \ method
 
 syntax keyword tealControl
             \ err
