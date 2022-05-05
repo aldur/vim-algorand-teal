@@ -116,6 +116,7 @@ syntax keyword tealFunction
             \ itob
             \ btoi
             \ mulw
+            \ divw
             \ addw
             \ getbit
             \ setbit
