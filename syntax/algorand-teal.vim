@@ -65,7 +65,10 @@ syntax keyword tealKeyword
             \ extract_uint16
             \ extract_uint32
             \ extract_uint64
+            \ replace2
+            \ replace3
             \ base64_decode
+            \ json_ref
             \ itxn
             \ itxna
             \ itxn_begin
@@ -116,6 +119,7 @@ syntax keyword tealFunction
             \ itob
             \ btoi
             \ mulw
+            \ divw
             \ addw
             \ getbit
             \ setbit
@@ -134,6 +138,10 @@ syntax keyword tealFunction
             \ log2
             \ bzero
             \ bitlen
+            \ replace2
+            \ replace3
+            \ base64_decode
+            \ json_ref
 
 syntax keyword tealTxnField
             \ Sender
@@ -193,6 +201,13 @@ syntax keyword tealTxnField
             \ LocalNumUint
             \ LocalNumByteSlice
             \ ExtraProgramPages
+            \ Nonparticipation
+            \ Logs
+            \ NumLogs
+            \ CreatedAssetID
+            \ CreatedApplicationID
+            \ LastLog
+            \ StateProofPK
 
 syntax keyword tealTxnType
             \ unknown
@@ -236,6 +251,7 @@ syntax keyword tealAssetParamsFields
             \ AssetReserve
             \ AssetFreeze
             \ AssetClawback
+            \ AssetCreator
 
 syntax keyword tealOnCompletionType
             \ NoOp
