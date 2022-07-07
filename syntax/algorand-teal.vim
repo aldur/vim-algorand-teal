@@ -357,6 +357,7 @@ highlight def link tealAssetParamsFields Identifier
 highlight def link tealAppParamsFields Identifier
 highlight def link tealAcctParamsFields Identifier
 highlight def link tealOnCompletionType Identifier
+highlight def link tealBlockFields Identifier
 
 highlight def link tealBranchTarget Label
 highlight def link tealBranchLabel Label
