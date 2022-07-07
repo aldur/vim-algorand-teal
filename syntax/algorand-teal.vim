@@ -82,6 +82,8 @@ syntax keyword tealKeyword
             \ box_len
             \ box_get
             \ box_put
+            \ vrf_verify
+            \ block
 
 syntax keyword tealControl
             \ err
@@ -283,6 +285,10 @@ syntax keyword tealAcctParamsFields
             \ AcctBalance
             \ AcctMinBalance
             \ AcctAuthAddr
+
+syntax keyword tealBlockFields
+            \ BlkSeed
+            \ BlkTimeStamp
 
 syntax match tealComment "\v//.*$"
 syntax match tealPragma "\v^#pragma.*$"
