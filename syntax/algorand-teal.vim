@@ -75,6 +75,13 @@ syntax keyword tealKeyword
             \ itxn_submit
             \ itxn_next
             \ method
+            \ box_create
+            \ box_extract
+            \ box_replace
+            \ box_del
+            \ box_len
+            \ box_get
+            \ box_put
 
 syntax keyword tealControl
             \ err
