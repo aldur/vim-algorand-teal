@@ -75,6 +75,15 @@ syntax keyword tealKeyword
             \ itxn_submit
             \ itxn_next
             \ method
+            \ box_create
+            \ box_extract
+            \ box_replace
+            \ box_del
+            \ box_len
+            \ box_get
+            \ box_put
+            \ vrf_verify
+            \ block
 
 syntax keyword tealControl
             \ err
@@ -277,6 +286,10 @@ syntax keyword tealAcctParamsFields
             \ AcctMinBalance
             \ AcctAuthAddr
 
+syntax keyword tealBlockFields
+            \ BlkSeed
+            \ BlkTimeStamp
+
 syntax match tealComment "\v//.*$"
 syntax match tealPragma "\v^#pragma.*$"
 
@@ -344,6 +357,7 @@ highlight def link tealAssetParamsFields Identifier
 highlight def link tealAppParamsFields Identifier
 highlight def link tealAcctParamsFields Identifier
 highlight def link tealOnCompletionType Identifier
+highlight def link tealBlockFields Identifier
 
 highlight def link tealBranchTarget Label
 highlight def link tealBranchLabel Label
