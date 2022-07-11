@@ -121,6 +121,7 @@ syntax keyword tealFunction
             \ keccak256
             \ sha512_256
             \ ed25519verify
+            \ ed25519verify_bare
             \ ecdsa_pk_decompress
             \ ecdsa_pk_recover
             \ ecdsa_verify
