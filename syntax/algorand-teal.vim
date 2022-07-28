@@ -152,6 +152,10 @@ syntax keyword tealFunction
             \ replace3
             \ base64_decode
             \ json_ref
+            \ sha3_256
+            \ bn256_add
+            \ bn256_scalar_mul
+            \ bn256_pairing
 
 syntax keyword tealTxnField
             \ Sender
@@ -295,6 +299,19 @@ syntax keyword tealBlockFields
             \ BlkSeed
             \ BlkTimeStamp
 
+syntax keyword tealEcdsaVerifyFields
+            \ Secp256k1
+            \ Secp256r1
+
+syntax keyword tealBase64DecodeFields
+            \ URLEncoding
+            \ StdEncoding
+
+syntax keyword tealJsonRefFields
+            \ JSONString
+            \ JSONUint64
+            \ JSONObject
+
 syntax match tealComment "\v//.*$"
 syntax match tealPragma "\v^#pragma.*$"
 
@@ -363,6 +380,9 @@ highlight def link tealAppParamsFields Identifier
 highlight def link tealAcctParamsFields Identifier
 highlight def link tealOnCompletionType Identifier
 highlight def link tealBlockFields Identifier
+highlight def link tealEcdsaVerifyFields Identifier
+highlight def link tealBase64DecodeFields Identifier
+highlight def link tealJsonRefFields Identifier
 
 highlight def link tealBranchTarget Label
 highlight def link tealBranchLabel Label
