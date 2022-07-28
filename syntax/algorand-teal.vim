@@ -218,6 +218,10 @@ syntax keyword tealTxnField
             \ CreatedApplicationID
             \ LastLog
             \ StateProofPK
+            \ ApprovalProgramPages
+            \ NumApprovalProgramPages
+            \ ClearStateProgramPages
+            \ NumClearStateProgramPages
 
 syntax keyword tealTxnType
             \ unknown
