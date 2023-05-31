@@ -84,6 +84,11 @@ syntax keyword tealKeyword
             \ box_put
             \ vrf_verify
             \ block
+            \ bury
+            \ popn
+            \ dupn
+            \ pushbytess
+            \ pushints
 
 syntax keyword tealControl
             \ err
@@ -97,6 +102,11 @@ syntax keyword tealControl
             \ assert
             \ retsub
             \ log
+            \ proto
+            \ frame_dig
+            \ frame_bury
+            \ switch
+            \ match
 
 syntax keyword tealUnit
             \ balance
@@ -294,6 +304,15 @@ syntax keyword tealAcctParamsFields
             \ AcctBalance
             \ AcctMinBalance
             \ AcctAuthAddr
+            \ AcctTotalNumUint
+            \ AcctTotalNumByteSlice
+            \ AcctTotalExtraAppPages
+            \ AcctTotalAppsCreated
+            \ AcctTotalAppsOptedIn
+            \ AcctTotalAssetsCreated
+            \ AcctTotalAssets
+            \ AcctTotalBoxes
+            \ AcctTotalBoxBytes
 
 syntax keyword tealBlockFields
             \ BlkSeed
